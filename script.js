@@ -124,7 +124,7 @@ decimal.addEventListener('click', (event) => {
 	let layar = calculatorScreen.value
 	let x = layar.split('+').join(', ').split('-').join(', ').split('*').join(', ').split('/').join(', ').split('%')
 
-	if(!(x[x.length -1].includes('.')) && calculatorScreen.value != '') {
+	if(!(x[x.length -1].includes('.')) && calculatorScreen.value != 0) {
 		updateScreen(titik)
 	}
 })
