@@ -1,7 +1,12 @@
 const calculatorScreen = document.querySelector('.calculator-screen')
 
 const updateScreen = (value) => {
-	calculatorScreen.value += value
+	if(calculatorScreen.value == 0){
+		calculatorScreen.value = value
+	}
+	else{
+		calculatorScreen.value += value
+	}
 }
 
 
@@ -94,7 +99,21 @@ const calculate = () => {
 //clear
 const clearBtn = document.querySelector('.all-clear')
 clearBtn.addEventListener('click', () => {
-	calculatorScreen.value = ""
+	calculatorScreen.value = parseInt(0)
+})
+
+const clearBtnsingle = document.querySelector('.clear-single')
+clearBtnsingle.addEventListener('click', () => {
+	let str = calculatorScreen.value
+	let hapus = str.slice(0,-1)
+	if(!(str == 0 || str === "")){
+		if(str.length == 1){
+			calculatorScreen.value = parseInt(0)
+		}
+		else{
+			calculatorScreen.value = parseInt(hapus)
+		}
+	}
 })
 
 
