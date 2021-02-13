@@ -74,7 +74,7 @@ operators.forEach((operator) => {
 		let simbolOperator = event.target.value
 		let x = calculatorScreen.value
 
-		if(calculatorScreen.value != ''){
+		if(calculatorScreen.value != 0){
 			if(!(x.slice(-1) === '+' || x.slice(-1) === '-' || x.slice(-1) === '*' || x.slice(-1) === '/' || x.slice(-1) === '%')){
 				updateScreen(simbolOperator)
 			}
@@ -87,7 +87,7 @@ operators.forEach((operator) => {
 const equalSign = document.querySelector('.equal-sign')
 equalSign.addEventListener('click', () => {
 	let hasil = calculate()
-	if(!(calculatorScreen.value === '')){
+	if(!(calculatorScreen.value == 0)){
 		calculatorScreen.value = hasil
 	}
 })
@@ -122,9 +122,10 @@ const decimal = document.querySelector('.decimal')
 decimal.addEventListener('click', (event) => {
 	let titik = event.target.value
 	let layar = calculatorScreen.value
-	let x = layar.split('+').join(', ').split('-').join(', ').split('*').join(', ').split('/').join(', ').split('%')
+	let x = layar.split('+').join(',').split('-').join(',').split('*').join(',').split('/').join(',').split('%')
+	let y = x[0].split(',')
 
-	if(!(x[x.length -1].includes('.')) && calculatorScreen.value != 0) {
+	if(!(y[y.length -1].includes('.')) && calculatorScreen.value != 0) {
 		updateScreen(titik)
 	}
 })
