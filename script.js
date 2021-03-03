@@ -75,7 +75,7 @@ operators.forEach((operator) => {
 		let x = calculatorScreen.value
 
 		if(calculatorScreen.value != 0){
-			if(!(x.slice(-1) === '+' || x.slice(-1) === '-' || x.slice(-1) === '*' || x.slice(-1) === '/' || x.slice(-1) === '%')){
+			if(!(x.slice(-1) === ('+' || '-' || '*' || '/' || '%') )){
 				updateScreen(simbolOperator)
 			}
 		}
